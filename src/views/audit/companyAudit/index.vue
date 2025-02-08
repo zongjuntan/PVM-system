@@ -9,9 +9,9 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="手机号码" prop="phonenumbe">
+      <el-form-item label="手机号码" prop="phonenumber">
         <el-input
-          v-model="queryParams.phonenumbe"
+          v-model="queryParams.phonenumber"
           placeholder="请输入手机号码"
           clearable
           @keyup.enter.native="handleQuery"
@@ -72,7 +72,7 @@
     <el-table v-loading="loading" :data="postList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center" />
       <el-table-column label="驾驶员姓名" align="center" prop="driverName" />
-      <el-table-column label="手机号码" align="center" prop="phonenumbe" />
+      <el-table-column label="手机号码" align="center" prop="phonenumber" />
       <el-table-column label="身份证" align="center" prop="cardNumber" />
       <el-table-column label="车辆类型" align="center" prop="carType">
         <template slot-scope="scope">
@@ -106,7 +106,7 @@
             type="text"
             icon="el-icon-edit"
             @click="handleAudit(scope.row)"
-            v-hasPermi="['system:post:edit']"
+            v-hasPermi="['audit:companyAudit:edit']"
           >审核</el-button>
           <!-- <el-button
             size="mini"
@@ -183,7 +183,7 @@ export default {
         pageNum: 1,
         pageSize: 10,
         driverName: undefined,
-        phonenumbe: undefined,
+        phonenumber: undefined,
         auditStatus: '0',
       },
       // 表单参数

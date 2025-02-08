@@ -105,6 +105,7 @@ export default {
           weight: 0.3
         }]
       })
+      console.log(list, this.fuse, 'test')
     },
     // Filter out the routes that can be displayed in the sidebar
     // And generate the internationalized title

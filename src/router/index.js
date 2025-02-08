@@ -88,86 +88,74 @@ export const constantRoutes = [
       }
     ]
   },
-  {
-    name: 'Vehicle',
-    path: '/vehicle',
-    component: Layout,
-    hidden: false,
-    redirect: 'noredirect',
-    alwaysShow: true,
-    meta: {
-        title: "园区车辆管理",
-        icon: "monitor",
-        noCache: false,
-        link: null
-    },
-    children: [
-      {
-        name: "VehicleEntryApplication",
-        path: "/vehicleEntryApplication",
-        hidden: false,
-        component: () => import('@/views/system/vehicleEntryApplication/index'),
-        meta: {
-            title: "车辆入园申请",
-            icon: "user",
-            noCache: false,
-            link: null
-        }
-      },
-      // {
-      //   name: "VehicleEntryAudit",
-      //   path: "/vehicleEntryAudit",
-      //   hidden: false,
-      //   component: () => import('@/views/system/vehicleEntryAudit/index'),
-      //   meta: {
-      //       title: "车辆入园审核",
-      //       icon: "peoples",
-      //       noCache: false,
-      //       link: null
-      //   }
-      // },
-    ]
-  },
-  {
-    name: 'audit',
-    path: '/audit',
-    component: Layout,
-    hidden: false,
-    redirect: 'noredirect',
-    alwaysShow: true,
-    meta: {
-        title: "车辆入园审核",
-        icon: "monitor",
-        noCache: false,
-        link: null
-    },
-    children: [
-      {
-        name: "VehicleEntryAudit",
-        path: "/vehicleEntryAudit",
-        hidden: false,
-        component: () => import('@/views/audit/parkAudit/index'),
-        meta: {
-            title: "园区审核",
-            icon: "peoples",
-            noCache: false,
-            link: null
-        }
-      },
-      {
-        name: "companyAudit",
-        path: "/companyAudit",
-        hidden: false,
-        component: () => import('@/views/audit/companyAudit/index'),
-        meta: {
-            title: "公司审核",
-            icon: "user",
-            noCache: false,
-            link: null
-        }
-      },
-    ]
-  },
+  // {
+  //   name: 'Vehicle',
+  //   path: '/vehicle',
+  //   component: Layout,
+  //   hidden: false,
+  //   redirect: 'noredirect',
+  //   alwaysShow: true,
+  //   meta: {
+  //       title: "园区车辆管理",
+  //       icon: "monitor",
+  //       noCache: false,
+  //       link: null
+  //   },
+  //   children: [
+  //     {
+  //       name: "VehicleEntryApplication",
+  //       path: "/vehicleEntryApplication",
+  //       hidden: false,
+  //       component: () => import('@/views/system/vehicleEntryApplication/index'),
+  //       meta: {
+  //           title: "车辆入园申请",
+  //           icon: "user",
+  //           noCache: false,
+  //           link: null
+  //       }
+  //     },
+  //   ]
+  // },
+  // {
+  //   name: 'audit',
+  //   path: '/audit',
+  //   component: Layout,
+  //   hidden: false,
+  //   redirect: 'noredirect',
+  //   alwaysShow: true,
+  //   meta: {
+  //       title: "车辆入园审核",
+  //       icon: "monitor",
+  //       noCache: false,
+  //       link: null
+  //   },
+  //   children: [
+  //     {
+  //       name: "ParkAudit",
+  //       path: "/parkAudit",
+  //       hidden: false,
+  //       component: () => import('@/views/audit/parkAudit/index'),
+  //       meta: {
+  //           title: "园区审核",
+  //           icon: "peoples",
+  //           noCache: false,
+  //           link: null
+  //       }
+  //     },
+  //     {
+  //       name: "companyAudit",
+  //       path: "/companyAudit",
+  //       hidden: false,
+  //       component: () => import('@/views/audit/companyAudit/index'),
+  //       meta: {
+  //           title: "公司审核",
+  //           icon: "user",
+  //           noCache: false,
+  //           link: null
+  //       }
+  //     },
+  //   ]
+  // },
   // {
   //   path: '',
   //   component: Layout,
@@ -188,46 +176,46 @@ export const constantRoutes = [
   //     },
   //   ]
   // },
-  {
-    path: '',
-    component: Layout,
-    hidden: false,
-    redirect: 'noredirect',
-    children: [
-      {
-        name: "NotificationManagement",
-        path: "/notificationManagement",
-        hidden: false,
-        component: () => import('@/views/system/notificationManagement/index'),
-        meta: {
-            title: "通告管理",
-            icon: "message",
-            noCache: false,
-            link: null
-        }
-      },
-    ]
-  },
-  {
-    path: '',
-    component: Layout,
-    hidden: false,
-    redirect: 'noredirect',
-    children: [
-      {
-        name: "UserFeedback",
-        path: "/userFeedback",
-        hidden: false,
-        component: () => import('@/views/system/userFeedback/index'),
-        meta: {
-            title: "用户反馈",
-            icon: "dict",
-            noCache: false,
-            link: null
-        }
-      },
-    ]
-  },
+  // {
+  //   path: '',
+  //   component: Layout,
+  //   hidden: false,
+  //   redirect: 'noredirect',
+  //   children: [
+  //     {
+  //       name: "NotificationManagement",
+  //       path: "/notificationManagement",
+  //       hidden: false,
+  //       component: () => import('@/views/system/notificationManagement/index'),
+  //       meta: {
+  //           title: "通告管理",
+  //           icon: "message",
+  //           noCache: false,
+  //           link: null
+  //       }
+  //     },
+  //   ]
+  // },
+  // {
+  //   path: '',
+  //   component: Layout,
+  //   hidden: false,
+  //   redirect: 'noredirect',
+  //   children: [
+  //     {
+  //       name: "UserFeedback",
+  //       path: "/userFeedback",
+  //       hidden: false,
+  //       component: () => import('@/views/system/userFeedback/index'),
+  //       meta: {
+  //           title: "用户反馈",
+  //           icon: "dict",
+  //           noCache: false,
+  //           link: null
+  //       }
+  //     },
+  //   ]
+  // },
 ]
 
 // 动态路由，基于用户权限动态去加载
@@ -317,7 +305,7 @@ Router.prototype.replace = function push(location) {
 }
 
 export default new Router({
-  mode: 'history', // 去掉url中的#
+  // mode: 'history', // 去掉url中的#
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
