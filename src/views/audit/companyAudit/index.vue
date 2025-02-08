@@ -263,7 +263,15 @@ export default {
     /** 查询岗位列表 */
     getList() {
       this.loading = true;
-      queryEntranceExitandExamine(this.queryParams).then(response => {
+      let params = this.queryParams
+      if (!this.$store.getters.userInfo.admin) {
+        params = {
+          ...this.queryParams,
+          deptId: this.$store.getters.userInfo.deptId
+        }
+      }
+      console.log(this.$store.getters.userInfo)
+      queryEntranceExitandExamine(params).then(response => {
         this.postList = response.rows;
         this.total = response.total;
         this.loading = false;
