@@ -102,6 +102,8 @@
         </template>
       </el-table-column>
       <el-table-column label="出入事宜" align="center" prop="entryMatters" />
+      <el-table-column label="实际入园时间" align="center" prop="actualEnterTime" />
+      <el-table-column label="实际出园时间" align="center" prop="actualOutTime" />
       <el-table-column label="入园时间" align="center" prop="enterTime" />
       <el-table-column label="出园时间" align="center" prop="outTime" />
       <el-table-column label="创建时间" align="center" prop="createTime" width="180">
@@ -266,7 +268,14 @@ export default {
     /** 查询岗位列表 */
     getList() {
       this.loading = true;
-      getApplicationList(this.queryParams).then(response => {
+      let params = this.queryParams
+      if (!this.$store.getters.userInfo.admin) {
+        params = {
+          ...this.queryParams,
+          deptId: this.$store.getters.userInfo.deptId
+        }
+      }
+      getApplicationList(params).then(response => {
         this.postList = response.rows;
         this.total = response.total;
         this.loading = false;
